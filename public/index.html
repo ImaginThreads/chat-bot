@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Chatbot</title>
+</head>
+<body>
+    <h1>Chat with GPT</h1>
+    <div id="chat-container">
+        <div id="messages"></div>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+<script>
+window.embeddedChatbotConfig = {
+chatbotId: "UqMjzJOtbMasRa56xAiW6",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="UqMjzJOtbMasRa56xAiW6"
+domain="www.chatbase.co"
+defer>
+</script>
+    <!-- <script>
+        async function sendMessage() {
+            const messageInput = document.getElementById('message-input');
+            const userMessage = messageInput.value;
+            displayMessage(userMessage, 'user');
+
+            const response = await fetch('http://localhost:3000/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userMessage })
+            });
+
+            const data = await response.json();
+            displayMessage(data.reply, 'bot');
+            messageInput.value = '';
+        }
+
+        function displayMessage(message, sender) {
+            const messageContainer = document.getElementById('messages');
+            const messageElement = document.createElement('div');
+            messageElement.className = sender;
+            messageElement.innerText = `${sender === 'user' ? 'You' : 'GPT'}: ${message}`;
+            messageContainer.appendChild(messageElement);
+        } -->
+    </script>
+</body>
+</html>
